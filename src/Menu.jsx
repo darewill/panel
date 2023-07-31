@@ -8,12 +8,12 @@ const menuItems = [
   {
     title: "Home",
     icon: "home",
-    path: 'http://127.0.0.1:8000/'
+    path: '/'
   },
   {
     title: "Analytics",
     icon: "analytics",
-    path: './Analytics'
+    path: '/analytics'
   },
   {
     title: "Booking",

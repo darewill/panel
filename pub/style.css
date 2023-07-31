@@ -91,6 +91,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -105,17 +106,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -123,6 +128,7 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -135,10 +141,9 @@ table {
 .mainPageHeader {
   display: flex;
   position: fixed;
-  height: 60px;
+  height: 80px;
   background-color: white;
   width: 100%;
-  justify-content: space-between;
 }
 
 .nav-wrapper {
@@ -147,8 +152,10 @@ table {
 
 .header-wrapper {
   display: flex;
-  align-items: baseline;
-  margin-right: 35%;
+  align-items: center;
+  padding: 0 30px;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .content-area {
@@ -168,7 +175,7 @@ table {
 }
 
 .logo {
-  padding: 40px 30px;
+  padding: 20px 30px 40px;
   background-color: white;
 }
 
@@ -224,13 +231,21 @@ table {
     height: 20px;
     width: 20px;
   }
+
   .menu-item {
     height: 5px;
     width: 10px;
   }
+
   .menu-wrapper {
     width: 20px;
   }
+}
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0px;
 }
 
 .dropdown.active {
@@ -256,6 +271,7 @@ ul {
   padding: 0;
   margin: 0;
 }
+
 li {
   padding: 8px 12px;
 }
@@ -265,4 +281,9 @@ li:hover {
   cursor: pointer;
   transition: 0.2s ease-out;
   color: "black";
+}
+
+.user-wrapper {
+  position: relative;
+  margin-right: 0px;
 }

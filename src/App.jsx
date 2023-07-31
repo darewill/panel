@@ -4,8 +4,7 @@ import { NavBar } from "./NavBar";
 import { HeaderBar } from "./HeaderBar";
 import { Home } from "./Home";
 import { Analytics } from "./Analytics";
-import { BrowserRouter } from "react-router-dom";
-import { Menu } from "./Menu";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const Main = () => {
   return (
@@ -15,17 +14,34 @@ const Main = () => {
         <HeaderBar />
       </div>
       <div className="content-area">
-    
-        <Home /> 
-    
+        <Outlet />
       </div>
     </div>
   );
 };
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "analytics",
+        element: <Analytics />,
+      }
+    ]
+  },
+]);
+
 const root = createRoot(document.getElementById("app"));
 root.render(
-  <BrowserRouter>
-    <Main />
-  </BrowserRouter>
+  <React.StrictMode>
+    <RouterProvider router={router}>
+      <Main />
+    </RouterProvider>
+  </React.StrictMode>
 );
