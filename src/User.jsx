@@ -1,9 +1,27 @@
-import React, {useEffect, useRef} from "react";
+import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+
+const userItems = [
+  {
+    title: "Settings",
+    icon: "settings",
+    path: "/settings",
+  },
+  {
+    title: "Help",
+    icon: "help",
+    path: "/help",
+  },
+  {
+    title: "Logout",
+    icon: "logout",
+    path: "/logout",
+  },
+];
 
 export const User = () => {
   const [open, setOpen] = React.useState(false);
   const menuRef = useRef();
-
 
   useEffect(() => {
     let handler = (e) => {
@@ -42,7 +60,7 @@ export const User = () => {
           </li>
           <li
             className="l material-symbols-outlined"
-            style={{ padding: "8px 39px", userSelect: "none"}}
+            style={{ padding: "8px 39px", userSelect: "none" }}
           >
             logout
           </li>

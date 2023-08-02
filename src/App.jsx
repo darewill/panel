@@ -4,6 +4,10 @@ import { NavBar } from "./NavBar";
 import { HeaderBar } from "./HeaderBar";
 import { Home } from "./Home";
 import { Analytics } from "./Analytics";
+import { Booking } from "./Booking";
+import { Settings } from "./Settings";
+import { File } from "./File";
+import { Error } from "./Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const Main = () => {
@@ -28,10 +32,26 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        errorElement: <Error />
       },
       {
         path: "analytics",
         element: <Analytics />,
+        errorElement: <Error />
+      },
+      {
+        path: "booking",
+        element: <Booking />,
+        errorElement: <Error />
+      },
+      {
+        path: "file",
+        element: <File />,
+        errorElement: <Error />
+      },
+      {
+        path: "settings",
+        element: <Settings />
       }
     ]
   },

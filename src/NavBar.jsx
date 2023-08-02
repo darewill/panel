@@ -3,13 +3,9 @@ import { Menu } from "./Menu";
 
 export const NavBar = () => {
 
-  function refreshPage(){
-    window.location.reload();
-} 
-
   return (
     <div className="nav-wrapper">
-      <div className="logo" onClick={refreshPage}>
+      <div className="logo" >
         <img
           src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png"
           style={{

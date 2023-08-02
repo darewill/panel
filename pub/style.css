@@ -287,3 +287,27 @@ li:hover {
   position: relative;
   margin-right: 0px;
 }
+
+.file-wrapper{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+.productCard {
+  margin: 10px;
+  max-width: 33%;
+}
+
+.foto{
+  height: 200px;
+  width: 200px;
+}
+
+.productCard, .title .price{
+  font-size: 20px;
+  text-align:center;
+  
+}

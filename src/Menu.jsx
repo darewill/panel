@@ -1,8 +1,5 @@
 import React from "react";
-import {Routes, Route, Link} from 'react-router-dom';
-import { Home } from "./Home";
-import { Analytics } from "./Analytics";
-
+import {Link} from 'react-router-dom';
 
 const menuItems = [
   {
