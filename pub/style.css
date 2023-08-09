@@ -288,26 +288,32 @@ li:hover {
   margin-right: 0px;
 }
 
-.file-wrapper{
+.file-wrapper {
   display: flex;
-  align-items: center;
   padding: 20px;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .productCard {
-  margin: 10px;
-  max-width: 33%;
+  width: 33.3%;
+  margin-bottom: 30px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.foto{
+.foto {
   height: 200px;
   width: 200px;
+  background-position: center; 
+  background-size: contain; 
+  background-repeat: no-repeat;
 }
 
-.productCard, .title .price{
+.productCard,
+.title .price {
   font-size: 20px;
-  text-align:center;
-  
+  text-align: center;
+
 }

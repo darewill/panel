@@ -46,12 +46,14 @@ export const User = () => {
 
       <div className={`dropdown ${open ? "active" : "inactive"}`}>
         <ul>
-          <li
-            className="material-symbols-outlined"
-            style={{ padding: "8px 39px", userSelect: "none" }}
-          >
-            settings
-          </li>
+          <Link to="settings">
+            <li
+              className="material-symbols-outlined"
+              style={{ padding: "8px 39px", userSelect: "none" }}
+            >
+              settings
+            </li>
+          </Link>
           <li
             className="material-symbols-outlined"
             style={{ padding: "8px 39px", userSelect: "none" }}
