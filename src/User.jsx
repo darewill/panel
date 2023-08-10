@@ -46,7 +46,7 @@ export const User = () => {
 
       <div className={`dropdown ${open ? "active" : "inactive"}`}>
         <ul>
-          <Link to="settings">
+          <Link to="settings" style={{ textDecoration: 'none', color: 'black' }}>
             <li
               className="material-symbols-outlined"
               style={{ padding: "8px 39px", userSelect: "none" }}
@@ -54,18 +54,23 @@ export const User = () => {
               settings
             </li>
           </Link>
+
+          <Link to="help" style={{ textDecoration: 'none', color: 'black' }}>
           <li
             className="material-symbols-outlined"
             style={{ padding: "8px 39px", userSelect: "none" }}
           >
             help
           </li>
+          </Link>
+          <Link to="logout" style={{ textDecoration: 'none', color: 'black' }}>
           <li
             className="l material-symbols-outlined"
             style={{ padding: "8px 39px", userSelect: "none" }}
           >
             logout
           </li>
+          </Link>
         </ul>
       </div>
     </div>
