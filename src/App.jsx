@@ -53,15 +53,18 @@ const router = createBrowserRouter([
       },
       {
         path: "settings",
-        element: <Settings />
+        element: <Settings />,
+        errorElement: <Error />
       },
       {
         path: "help",
-        element: <Help />
+        element: <Help />,
+        errorElement: <Error />
       },
       {
         path: "logout",
-        element: <Logout />
+        element: <Logout />,
+        errorElement: <Error />
       }
     ]
   },

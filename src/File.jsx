@@ -1,8 +1,11 @@
 import React from "react";
 import { Card } from "./Card";
+import { Link } from "react-router-dom";
 
 export const File = () => {
   const [list, setList] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+  const [currentPage, setCurrentPage] = React.useState(1);
   // set state for loader, default is true
 
   React.useEffect(async () => {
@@ -22,6 +25,12 @@ export const File = () => {
           price={item.price}
         />
       ))}
+
+        <ul className="pagination">
+          <li>1</li>
+          <li>2</li>
+        </ul>
+
     </div>
   );
 };

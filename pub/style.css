@@ -227,19 +227,11 @@ table {
 }
 
 @media screen and (max-width: 600px) {
-  .logo {
-    height: 20px;
-    width: 20px;
+  .productCard {
+    padding: 30px;
+  
   }
 
-  .menu-item {
-    height: 5px;
-    width: 10px;
-  }
-
-  .menu-wrapper {
-    width: 20px;
-  }
 }
 
 .dropdown {
@@ -316,4 +308,8 @@ li:hover {
   font-size: 20px;
   text-align: center;
 
+}
+
+.pagination{
+  display: flex;
 }
