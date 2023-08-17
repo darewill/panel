@@ -266,6 +266,7 @@ ul {
 
 li {
   padding: 8px 12px;
+  user-select: none;
 }
 
 li:hover {

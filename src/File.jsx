@@ -1,26 +1,25 @@
 import React from "react";
 import { Card } from "./Card";
-import { Link } from "react-router-dom";
 
 export const File = () => {
   const [listInfo, setListInfo] = React.useState({
     total: 0,
-    products: []
+    products: [],
   });
   const [loading, setLoading] = React.useState(true);
-  const [active, setActive] = React.useState(false);
-
-  const handleClick = (e) =>{
-    setActive( current => !current);
-  };
 
   // set state for loader, default is true
 
-  React.useEffect(async () => {
-    const request = await fetch("https://dummyjson.com/products?limit=15");
+  const fetchData = async (skip = 0) => {
+    const request = await fetch(
+      "https://dummyjson.com/products?limit=15&skip=" + skip
+    );
     const requestObj = await request.json();
-    // update loader state to false because we already fetched the products at this point
     setListInfo(requestObj);
+  };
+
+  React.useEffect(() => {
+    fetchData();
   }, []);
 
   // create a Loader component, show loader when it's true instead of products, otherwise show cards and not Loader component
@@ -47,19 +46,26 @@ export const File = () => {
       ))}
 
       <ul className="pagination">
-      {
+        {listInfo.skip !== 0 && (
+          <li onClick={() => fetchData(listInfo.skip - 15)}>{"<"}</li>
+        )}
+        {
           // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
           // skipin e dijme, pjesetoje me 15, krahasoje me item edhe jepja stilin
-          [...new Array(7).keys()].map((item) => <li className={"li" + (active ? ' active' : '')} key={item.id} onClick={async () => {
-            
-            const request = await fetch("https://dummyjson.com/products?limit=15&skip=" + item * 15);
-            const requestObj = await request.json();
-            setListInfo(requestObj);
-            handleClick();
-          }}
-          >{item + 1}</li>)}
+          [...new Array(7).keys()].map((item) => (
+            <li
+              className={listInfo.skip / 15 === item ? "active" : ""}
+              key={item}
+              onClick={() => fetchData(item * 15)}
+            >
+              {item + 1}
+            </li>
+          ))
+        }
+        {Math.ceil(listInfo.total / 15) !== listInfo.skip / 15 + 1 && (
+          <li onClick={() => fetchData(listInfo.skip + 15)}>{">"}</li>
+        )}
       </ul>
-
     </div>
   );
 };
