@@ -8,6 +8,11 @@ export const File = () => {
     products: []
   });
   const [loading, setLoading] = React.useState(true);
+  const [active, setActive] = React.useState(false);
+
+  const handleClick = (e) =>{
+    setActive( current => !current);
+  };
 
   // set state for loader, default is true
 
@@ -21,15 +26,15 @@ export const File = () => {
   // create a Loader component, show loader when it's true instead of products, otherwise show cards and not Loader component
 
   // Simple way to fill an array with items(ex numbers)
-  const getPageNumbers = () => {
-    let numbers = [];
+  // const getPageNumbers = () => {
+  //   let numbers = [];
 
-    for (let i = 1; i <= Math.ceil(listInfo.total / 15); i++) {
-      numbers.push(i);
-    }
+  //   for (let i = 1; i <= Math.ceil(listInfo.total / 15); i++) {
+  //     numbers.push(i);
+  //   }
 
-    return numbers;
-  };
+  //   return numbers;
+  // };
 
   return (
     <div className="file-wrapper">
@@ -45,11 +50,14 @@ export const File = () => {
       {
           // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
           // skipin e dijme, pjesetoje me 15, krahasoje me item edhe jepja stilin
-          [...new Array(7).keys()].map((item) => <li onClick={async () => {
+          [...new Array(7).keys()].map((item) => <li className={"li" + (active ? ' active' : '')} key={item.id} onClick={async () => {
+            
             const request = await fetch("https://dummyjson.com/products?limit=15&skip=" + item * 15);
             const requestObj = await request.json();
             setListInfo(requestObj);
-          }}>{item + 1}</li>)}
+            handleClick();
+          }}
+          >{item + 1}</li>)}
       </ul>
 
     </div>

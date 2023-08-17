@@ -312,4 +312,11 @@ li:hover {
 
 .pagination{
   display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.active{
+  background-color: blueviolet;
+  color: white;
 }
