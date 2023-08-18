@@ -6,7 +6,7 @@ export const File = () => {
     total: 0,
     products: [],
   });
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
 
   // set state for loader, default is true
 
@@ -16,6 +16,7 @@ export const File = () => {
     );
     const requestObj = await request.json();
     setListInfo(requestObj);
+    setLoading(true);
   };
 
   React.useEffect(() => {
@@ -37,6 +38,9 @@ export const File = () => {
 
   return (
     <div className="file-wrapper">
+      { loading ? (fetchData) : (
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/008/034/405/small/loading-bar-doodle-element-hand-drawn-vector.jpg"></img>
+      )}
       {listInfo.products.map((item) => (
         <Card
           thumbnail={item.thumbnail}
