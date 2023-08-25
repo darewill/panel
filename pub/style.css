@@ -233,12 +233,24 @@ table {
   transition: 0.3s ease;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .productCard {
     padding: 30px;
-  
   }
 
+  .search-wrapper {
+    width: 5px;
+  }
+
+  .menu-wrapper{
+    width: 300px;
+    display:flex;
+    height: 0px;
+  }
+  .content-area{
+    margin: 200px 0px;
+    width: 300px;
+  }
 }
 
 .dropdown {
@@ -308,8 +320,8 @@ li:hover {
 .foto {
   height: 200px;
   width: 200px;
-  background-position: center; 
-  background-size: contain; 
+  background-position: center;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -317,16 +329,15 @@ li:hover {
 .title .price {
   font-size: 20px;
   text-align: center;
-
 }
 
-.pagination{
+.pagination {
   display: flex;
   width: 100%;
   justify-content: center;
 }
 
-.active{
+.active {
   background-color: blueviolet;
   color: white;
 }
