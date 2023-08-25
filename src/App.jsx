@@ -5,7 +5,7 @@ import { HeaderBar } from "./HeaderBar";
 import { Home } from "./Home";
 import { Analytics } from "./Analytics";
 import { Booking } from "./Booking";
-import { File } from "./File";
+import { Products } from "./Products";
 import { Error } from "./Error";
 import { Settings } from "./Settings";
 import { Help } from "./Help";
@@ -47,8 +47,8 @@ const router = createBrowserRouter([
         errorElement: <Error />
       },
       {
-        path: "file",
-        element: <File />,
+        path: "products",
+        element: <Products />,
         errorElement: <Error />
       },
       {

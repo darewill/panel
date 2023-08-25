@@ -18,9 +18,9 @@ const menuItems = [
     path: '/booking'
   },
   {
-    title: "File",
+    title: "Products",
     icon: "description",
-    path: '/file'
+    path: '/products'
   },
 ];
 

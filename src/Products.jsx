@@ -1,16 +1,16 @@
 import React from "react";
 import { Card } from "./Card";
-import { render } from "react-dom";
+import { Pagination } from "./Pagination";
+import { Link } from 'react-router-dom';
 
-export const File = () => {
+export const Products = () => {
   const [listInfo, setListInfo] = React.useState({
     total: 0,
     products: [],
   });
   const [loading, setLoading] = React.useState(false);
 
-  // set state for loader, default is true
-
+  //<
   const fetchData = async (skip = 0) => {
     setLoading(true);
     const request = await fetch(
@@ -25,7 +25,7 @@ export const File = () => {
     fetchData();
   }, []);
 
-  // create a Loader component, show loader when it's true instead of products, otherwise show cards and not Loader component
+  //>
 
   // Simple way to fill an array with items(ex numbers)
   // const getPageNumbers = () => {
@@ -52,29 +52,7 @@ export const File = () => {
         renderList()
       )}
 
-      {!loading && (
-        <ul className="pagination">
-          {listInfo.skip !== 0 && (
-            <li onClick={() => fetchData(listInfo.skip - 15)}>{"<"}</li>
-          )}
-          {
-            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
-            // skipin e dijme, pjesetoje me 15, krahasoje me item edhe jepja stilin
-            [...new Array(7).keys()].map((item) => (
-              <li
-                className={listInfo.skip / 15 === item ? "active" : ""}
-                key={item}
-                onClick={() => fetchData(item * 15)}
-              >
-                {item + 1}
-              </li>
-            ))
-          }
-          {Math.ceil(listInfo.total / 15) !== listInfo.skip / 15 + 1 && (
-            <li onClick={() => fetchData(listInfo.skip + 15)}>{">"}</li>
-          )}
-        </ul>
-      )}
+      {!loading && <Pagination listInfo={listInfo} fetchData={fetchData} />}
     </div>
   );
 };
