@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 
+*{
+  box-sizing: border-box;
+}
+
 html,
 body,
 div,
@@ -166,6 +170,9 @@ table {
   padding: 20px;
   background-color: rgb(243, 246, 248);
   border-radius: 30px;
+  min-height: calc(100vh - 200px);
+  width: 100%;
+  
 }
 
 .home-page {
@@ -286,6 +293,8 @@ li:hover {
   padding: 20px;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .productCard {
