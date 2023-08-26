@@ -1,7 +1,6 @@
 import React from "react";
 import { Card } from "./Card";
 import { Pagination } from "./Pagination";
-import { Link } from 'react-router-dom';
 
 export const Products = () => {
   const [listInfo, setListInfo] = React.useState({
@@ -40,7 +39,11 @@ export const Products = () => {
 
   const renderList = () => {
     return listInfo.products.map((item) => (
-      <Card thumbnail={item.thumbnail} title={item.title} price={item.price} />
+      <Card
+        thumbnail={item.thumbnail}
+        title={item.title}
+        price={item.price}
+      />
     ));
   };
 
